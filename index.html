@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lourdhu Raj Periyanayagam | Senior Security Analyst &amp; Penetration Tester</title>
+<meta name="description" content="Senior Security Analyst and manual &amp; automated penetration tester with 8+ years in penetration testing, vulnerability management and threat intelligence across network, web, API, mobile, IoT and IT/OT environments.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛡️</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,700;12..96,800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --blue: #2B3BF0;
+    --pink: #FF2E7E;
+    --sun: #FFC93C;
+    --mint: #12B98E;
+    --on-color: #FFFFFF;
+    --on-sun: #16173A;
+    --paper: #F7F7FF;
+    --surface: #FFFFFF;
+    --ink: #16173A;
+    --muted: #55577A;
+    --line: #DCDDF2;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --blue: #4352FF;
+      --paper: #11122A;
+      --surface: #1A1C3B;
+      --ink: #F1F1FF;
+      --muted: #A9ABCC;
+      --line: #2D2F58;
+      color-scheme: dark;
+    }
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Bricolage Grotesque", system-ui, -apple-system, "Segoe UI", sans-serif;
+    font-size: 1.0625rem;
+    line-height: 1.6;
+  }
+  a { color: inherit; }
+  a:focus-visible, button:focus-visible { outline: 3px solid var(--sun); outline-offset: 3px; border-radius: 4px; }
+  .wrap { width: min(1120px, 100% - 2.5rem); margin-inline: auto; }
+
+  /* Hero */
+  .hero { background: var(--blue); color: var(--on-color); overflow: hidden; }
+  .nav { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1.25rem 0; flex-wrap: wrap; }
+  .mark { font-weight: 800; font-size: 1.25rem; text-decoration: none; letter-spacing: -0.02em; }
+  .nav ul { list-style: none; display: flex; gap: 1.5rem; margin: 0; padding: 0; flex-wrap: wrap; }
+  .nav ul a { text-decoration: none; opacity: .85; }
+  .nav ul a:hover { opacity: 1; text-decoration: underline; text-underline-offset: 4px; }
+  .btn {
+    display: inline-block; background: var(--sun); color: var(--on-sun);
+    font-weight: 700; text-decoration: none; padding: .7rem 1.2rem; border-radius: 999px;
+  }
+  .btn:hover { background: #FFD966; }
+  .hero-body { padding: 4rem 0 0; }
+  .hero h1 {
+    font-size: clamp(3rem, 11vw, 9rem);
+    font-weight: 800; line-height: .9; letter-spacing: -0.045em; margin: 0;
+  }
+  .hero h1 span { display: block; }
+  .hero h1 .last { color: var(--sun); }
+  .tagline {
+    display: inline-block; background: var(--pink); color: var(--on-color);
+    font-size: clamp(1.15rem, 2.4vw, 1.6rem); font-weight: 500;
+    padding: .6rem 1.1rem; margin: 2rem 0 3rem; border-radius: 6px; transform: rotate(-1.2deg);
+  }
+  .targets { background: var(--sun); color: var(--on-sun); }
+  .targets ul {
+    list-style: none; margin: 0; padding: 1rem 0; display: flex; flex-wrap: wrap; gap: .5rem 2rem;
+    font-weight: 700; font-size: clamp(1rem, 2vw, 1.35rem);
+  }
+  .targets li::before { content: "◆"; margin-right: .6rem; color: var(--pink); }
+
+  /* Sections */
+  section { padding: 5rem 0; }
+  h2 { font-size: clamp(2rem, 5vw, 3.25rem); line-height: 1.05; letter-spacing: -0.03em; margin: 0 0 2rem; font-weight: 800; }
+  .about p { font-size: clamp(1.25rem, 2.6vw, 1.75rem); line-height: 1.45; max-width: 34ch; margin: 0; font-weight: 500; }
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: end; }
+  .about-facts { list-style: none; margin: 0; padding: 0; display: grid; gap: 1rem; }
+  .about-facts li { border-left: 6px solid var(--mint); padding-left: 1rem; color: var(--muted); }
+  .about-facts strong { display: block; color: var(--ink); font-size: 1.15rem; }
+
+  /* Selected work */
+  .work-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 1rem; }
+  .tile { border-radius: 14px; padding: 1.75rem; background: var(--surface); border: 2px solid var(--line); }
+  .tile h3 { margin: 0 0 .5rem; font-size: 1.35rem; line-height: 1.2; letter-spacing: -0.01em; }
+  .tile p { margin: 0; }
+  .tile.big { grid-column: span 4; grid-row: span 2; background: var(--ink); color: var(--paper); border: 0; display: flex; flex-direction: column; justify-content: flex-end; min-height: 320px; }
+  .tile.big h3 { font-size: clamp(1.75rem, 3.6vw, 2.75rem); line-height: 1.05; letter-spacing: -0.03em; }
+  .tile.big p { opacity: .8; max-width: 46ch; margin-top: .75rem; }
+  .tile.pink { grid-column: span 2; background: var(--pink); color: var(--on-color); border: 0; }
+  .tile.sun { grid-column: span 2; background: var(--sun); color: var(--on-sun); border: 0; }
+  .tile.plain { grid-column: span 2; }
+  .tile.plain p { color: var(--muted); }
+
+  /* Timeline */
+  .timeline { list-style: none; margin: 0; padding: 0; position: relative; }
+  .timeline::before { content: ""; position: absolute; left: 9rem; top: .5rem; bottom: .5rem; width: 4px; background: var(--line); border-radius: 4px; }
+  .t-item { display: grid; grid-template-columns: 9rem 1fr; gap: 0 2.25rem; padding-bottom: 2.25rem; position: relative; }
+  .t-item::before { content: ""; position: absolute; left: calc(9rem - 7px); top: .45rem; width: 18px; height: 18px; border-radius: 50%; background: var(--paper); border: 4px solid var(--blue); }
+  .t-item.now::before { background: var(--pink); border-color: var(--pink); box-shadow: 0 0 0 6px color-mix(in srgb, var(--pink) 25%, transparent); }
+  .t-when { font-weight: 700; color: var(--muted); padding-right: 1rem; text-align: right; font-size: .95rem; }
+  .t-item.now .t-when { color: var(--pink); }
+  .t-body h3 { margin: 0; font-size: 1.35rem; letter-spacing: -0.01em; }
+  .t-body .org { color: var(--muted); margin: .1rem 0 .75rem; }
+  .t-body ul { margin: 0; padding-left: 1.1rem; max-width: 70ch; }
+  .t-body li { margin-bottom: .35rem; }
+  .t-body li::marker { color: var(--blue); }
+
+  .edu-section { background: var(--surface); border-block: 2px solid var(--line); }
+  .edu-section .t-item::before { background: var(--surface); }
+
+  /* Skills */
+  .skill-groups { display: grid; grid-template-columns: 1.1fr 1fr; gap: 3rem; }
+  .skill-groups h3 { font-size: 1.2rem; margin: 0 0 1rem; }
+  .chips { list-style: none; display: flex; flex-wrap: wrap; gap: .6rem; margin: 0; padding: 0; }
+  .chips.vapt li { font-weight: 700; font-size: 1.1rem; padding: .6rem 1.1rem; border-radius: 999px; color: var(--on-color); }
+  .chips.vapt li:nth-child(5n+1) { background: var(--blue); }
+  .chips.vapt li:nth-child(5n+2) { background: var(--pink); }
+  .chips.vapt li:nth-child(5n+3) { background: var(--sun); color: var(--on-sun); }
+  .chips.vapt li:nth-child(5n+4) { background: var(--mint); color: #062B22; }
+  .chips.vapt li:nth-child(5n+5) { background: var(--ink); color: var(--paper); }
+  .chips.tools li { padding: .45rem 1rem; border-radius: 8px; font-weight: 700; background: color-mix(in srgb, var(--blue) 12%, var(--surface)); color: var(--ink); border: 2px solid color-mix(in srgb, var(--blue) 35%, transparent); }
+  .chips.other li { padding: .4rem .9rem; border-radius: 999px; border: 2px solid var(--line); background: var(--surface); }
+
+  /* Certifications & education */
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
+  .list { list-style: none; margin: 0; padding: 0; }
+  .list li { padding: 1rem 0; border-bottom: 2px solid var(--line); }
+  .list li:first-child { border-top: 2px solid var(--line); }
+  .list strong { display: block; font-size: 1.1rem; line-height: 1.3; }
+  .list span { color: var(--muted); }
+
+  /* Contact */
+  .contact { background: var(--pink); color: var(--on-color); }
+  .contact h2 { margin-bottom: 1rem; }
+  .contact p { font-size: 1.2rem; max-width: 46ch; margin: 0 0 2rem; }
+  .email-link { font-size: clamp(1.4rem, 4.5vw, 3rem); font-weight: 800; letter-spacing: -0.03em; word-break: break-all; text-decoration-thickness: 4px; text-underline-offset: 8px; }
+  .contact-links { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2.5rem; }
+  .contact-links a { border: 2px solid var(--on-color); padding: .6rem 1.1rem; border-radius: 999px; text-decoration: none; font-weight: 700; }
+  .contact-links a:hover { background: var(--on-color); color: var(--pink); }
+  footer { padding: 2rem 0; color: var(--muted); font-size: .9rem; }
+
+  @media (max-width: 860px) {
+    .about-grid, .skill-groups, .two-col { grid-template-columns: 1fr; gap: 2.5rem; }
+    .work-grid { grid-template-columns: 1fr 1fr; }
+    .tile.big { grid-column: span 2; grid-row: auto; min-height: 240px; }
+    .tile.pink, .tile.sun, .tile.plain { grid-column: span 1; }
+  }
+  @media (max-width: 560px) {
+    .nav ul { display: none; }
+    .work-grid { grid-template-columns: 1fr; }
+    .tile.big, .tile.pink, .tile.sun, .tile.plain { grid-column: span 1; }
+    .timeline::before { left: 7px; }
+    .t-item { grid-template-columns: 1fr; padding-left: 2.25rem; }
+    .t-item::before { left: 0; }
+    .t-when { text-align: left; padding: 0 0 .25rem; }
+    section { padding: 3.5rem 0; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <nav class="nav" aria-label="Main">
+      <a class="mark" href="#top">LR.</a>
+      <ul>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <a class="btn" href="resume.pdf" download>Download resume</a>
+    </nav>
+    <div class="hero-body" id="top">
+      <h1><span>Lourdhu Raj</span><span class="last">Periyanayagam S</span></h1>
+      <p class="tagline">Manual &amp; automated penetration tester. I break into systems so attackers can’t.</p>
+    </div>
+  </div>
+  <div class="targets">
+    <div class="wrap">
+      <ul aria-label="Penetration testing focus areas">
+        <li>Network &amp; AD</li><li>Web apps</li><li>APIs</li><li>iOS &amp; Android</li><li>IoT</li><li>IT &amp; OT</li>
+      </ul>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="about" aria-labelledby="about-h">
+    <div class="wrap about-grid">
+      <div>
+        <h2 id="about-h">About</h2>
+        <p>Senior security analyst and manual &amp; automated penetration tester with 8+ years in vulnerability management and threat intelligence. I help organizations find and eliminate security risks before attackers exploit them.</p>
+      </div>
+      <ul class="about-facts">
+        <li><strong>1,000+ security assessments</strong>For enterprises, major private organizations and Indian government platforms</li>
+        <li><strong>Senior Security Analyst at Securin</strong>Chennai, with the team since 2018</li>
+        <li><strong>Python automation &amp; AI-assisted testing</strong>Custom Python tools, plus Claude, ChatGPT and other AI tools in day-to-day work</li>
+        <li><strong>CRTP certified</strong>Active Directory attack and defense</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="work" aria-labelledby="work-h">
+    <div class="wrap">
+      <h2 id="work-h">Selected work</h2>
+      <div class="work-grid">
+        <article class="tile big">
+          <h3>Compromised the domain controller in around 80% of network assessments</h3>
+          <p>Active Directory attack paths, privilege escalation on Windows and Linux, and lateral movement across internal networks.</p>
+        </article>
+        <article class="tile pink">
+          <h3>mAadhaar</h3>
+          <p>Found data-breach and business-logic flaws in the Indian government’s mAadhaar mobile app.</p>
+        </article>
+        <article class="tile sun">
+          <h3>Onsite in Dubai</h3>
+          <p>Ran an onsite engagement single-handedly, covering web, Android, iOS, network and IT &amp; OT assessments.</p>
+        </article>
+        <article class="tile plain">
+          <h3>PII leaks stopped early</h3>
+          <p>Found and helped fix critical vulnerabilities and PII data leaks that could have led to large-scale breaches.</p>
+        </article>
+        <article class="tile plain">
+          <h3>Security automation</h3>
+          <p>Write Python automation tools that streamline vulnerability detection, reporting and monitoring.</p>
+        </article>
+        <article class="tile plain">
+          <h3>Breach investigation</h3>
+          <p>Investigated security breaches end to end and put the right fixes in place.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience" aria-labelledby="exp-h">
+    <div class="wrap">
+      <h2 id="exp-h">Experience</h2>
+      <ol class="timeline">
+        <li class="t-item now">
+          <div class="t-when">Oct 2025 – now</div>
+          <div class="t-body">
+            <h3>Senior Security Analyst</h3>
+            <p class="org">Securin Inc., Chennai</p>
+            <ul>
+              <li>Lead manual and automated penetration tests across network (Active Directory), web, API, Android, iOS, IoT and IT/OT environments.</li>
+              <li>Build Python automation tools and use AI tools such as Claude and ChatGPT to speed up testing, analysis and reporting.</li>
+              <li>Turn findings into actionable insights and remediation strategies aligned with business goals.</li>
+              <li>Drive vulnerability management and threat intelligence work for global clients.</li>
+            </ul>
+          </div>
+        </li>
+        <li class="t-item">
+          <div class="t-when">2024 – 2025</div>
+          <div class="t-body">
+            <h3>Security Analyst II</h3>
+            <p class="org">Securin Inc., Chennai</p>
+            <ul>
+              <li>Ran manual and automated penetration tests and vulnerability assessments for enterprise and government clients, using Burp Suite, Nessus, Acunetix and Qualys.</li>
+              <li>Developed Python-based security automation to streamline vulnerability detection, reporting and monitoring.</li>
+            </ul>
+          </div>
+        </li>
+        <li class="t-item">
+          <div class="t-when">2018 – 2023</div>
+          <div class="t-body">
+            <h3>Security Analyst I</h3>
+            <p class="org">Cyber Security Works Pvt. Ltd, Chennai</p>
+            <ul>
+              <li>Ran vulnerability assessments and penetration tests across network, web, API, mobile and IT/OT environments.</li>
+              <li>Conducted security audits and vulnerability scans to find at-risk systems, then drove remediation.</li>
+              <li>Performed risk analyses and recommended security countermeasures and process improvements.</li>
+              <li>Helped establish company-wide security best practices and protocols to reduce the risk of data breaches.</li>
+              <li>Reviewed violations of security procedures and provided mitigation plans.</li>
+            </ul>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="education" class="edu-section" aria-labelledby="edu-h">
+    <div class="wrap">
+      <h2 id="edu-h">Education</h2>
+      <ol class="timeline">
+        <li class="t-item">
+          <div class="t-when">2016 – 2018</div>
+          <div class="t-body">
+            <h3>Master of Computer Applications</h3>
+            <p class="org">SA Engineering College (Anna University), Chennai, 79.54%</p>
+          </div>
+        </li>
+        <li class="t-item">
+          <div class="t-when">2016</div>
+          <div class="t-body">
+            <h3>B.Sc. Computer Science</h3>
+            <p class="org">Jamal Mohamed College, Tiruchirappalli, 81%</p>
+          </div>
+        </li>
+        <li class="t-item">
+          <div class="t-when">2013</div>
+          <div class="t-body">
+            <h3>Higher Secondary (12th)</h3>
+            <p class="org">Our Lady of Good Health Higher Secondary School, Velankanni, 73.66%</p>
+          </div>
+        </li>
+        <li class="t-item">
+          <div class="t-when">2011</div>
+          <div class="t-body">
+            <h3>Secondary (10th)</h3>
+            <p class="org">Our Lady of Good Health Higher Secondary School, Velankanni, 91%</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="skills" aria-labelledby="skills-h">
+    <div class="wrap">
+      <h2 id="skills-h">Skills &amp; certifications</h2>
+      <div class="skill-groups">
+        <div>
+          <h3>Penetration testing (VAPT)</h3>
+          <ul class="chips vapt">
+            <li>Network &amp; Active Directory</li><li>Web applications</li><li>APIs</li><li>iOS &amp; Android</li><li>IoT</li><li>IT &amp; OT</li>
+          </ul>
+          <h3 style="margin-top:2rem">Testing approach</h3>
+          <ul class="chips other">
+            <li>Manual penetration testing</li><li>Automated penetration testing</li>
+          </ul>
+          <h3 style="margin-top:2rem">Tools</h3>
+          <ul class="chips tools">
+            <li>Burp Suite</li><li>Nessus</li><li>Acunetix</li><li>Qualys</li><li>Kali Linux</li>
+          </ul>
+          <h3 style="margin-top:2rem">Automation &amp; AI</h3>
+          <ul class="chips tools">
+            <li>Python</li><li>Custom automation tools</li><li>Claude</li><li>ChatGPT</li><li>AI-assisted testing</li>
+          </ul>
+          <h3 style="margin-top:2rem">Security practice</h3>
+          <ul class="chips other">
+            <li>Threat intelligence</li><li>Vulnerability management</li><li>Security automation</li><li>Compliance management</li><li>Security engineering</li><li>Risk identification</li><li>Solution architecture</li>
+            <li>Cybersecurity frameworks</li><li>PCI DSS</li><li>Security best practices</li><li>Security configuration</li>
+            <li>Network protection</li><li>Systems analysis</li><li>Operations security</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Certifications</h3>
+          <ul class="list">
+            <li><strong>Certified Red Team Professional (CRTP)</strong><span>Active Directory Attack-Defense Lab, PentesterAcademy</span></li>
+            <li><strong>Windows Privilege Escalation</strong><span>TCM Security</span></li>
+            <li><strong>Linux Privilege Escalation</strong><span>TCM Security</span></li>
+            <li><strong>Cybersecurity Essentials</strong></li>
+            <li><strong>Introduction to Cybersecurity</strong></li>
+            <li><strong>Networking Basics</strong></li>
+            <li><strong>IBM CE: Enterprise Mobile Application Development and Deployment</strong><span>IBM Worklight</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact" aria-labelledby="contact-h">
+    <div class="wrap">
+      <h2 id="contact-h">Need something tested?</h2>
+      <p>I’m open to security assessment work and conversations about penetration testing.</p>
+      <a class="email-link" href="mailto:lourdhuraj143@gmail.com">lourdhuraj143@gmail.com</a>
+      <div class="contact-links">
+        <a href="https://www.linkedin.com/in/lourdhu-raj-periyanayagam/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="resume.pdf" download>Download resume</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">Lourdhu Raj Periyanayagam, Chennai, India</div>
+</footer>
+
+</body>
+</html>
