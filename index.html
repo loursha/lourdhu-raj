@@ -399,7 +399,10 @@
 </main>
 
 <footer>
-  <div class="wrap">Lourdhu Raj Periyanayagam, Chennai, India</div>
+  <div class="wrap">Lourdhu Raj Periyanayagam, Chennai, India.			&copy; <span id="year"></span>. All rights reserved.</div>
+  <script>
+	document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </footer>
 
 </body>
